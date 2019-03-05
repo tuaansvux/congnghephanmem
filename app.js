@@ -1,19 +1,9 @@
-var express = require('express');
-var router = express();
+const  express  = require ('express');
+const app =express()
 
-router.get('/', function (req, res) {
-    const wes ={ name:'wes',age:100,cool:true};
-   res.send('Hello World!!!');
-   //res.json(wes);
-})
+app.get('/',(req,res) => res.send('hello world'));
 
-module.exports=router;
+app.listen(3000,()=>{
 
-var server = router.listen(3000, function () {
-
-  var host = server.address().address
-  var port = server.address().port
-
-  console.log("Ung dung Node.js dang lang nghe tai dia chi: http://%s:%s", host, port)
-
+    console.log('MY REST API Running  on port 3000!'); 
 })
